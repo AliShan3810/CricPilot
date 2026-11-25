@@ -1,4 +1,4 @@
-# CricLedger: progress
+# CricPilot: progress
 
 _Last updated: 2026-11-24_
 
@@ -56,7 +56,7 @@ _Last updated: 2026-11-24_
   clashing quick-team name gets a suffix (for example "Night Owls · 2") rather than risking a table rebuild.
 - **Charts and celebrations** use Skia; UI motion uses Reanimated; gradients use react-native-svg (no extra native module).
 - **Text on orange is navy** for outdoor contrast.
-- **Brand** is set in `theme/brand.ts`: renamed CricPilot → CricLedger, and backups from both names are accepted.
+- **Brand** is set in `theme/brand.ts`: the app is named CricPilot; backups from the interim name CricLedger are still accepted.
 - **No network.** The release Android manifest has no INTERNET permission (debug keeps it for Metro).
 
 ## Visual QA (iOS simulator, Debug build, driven by Maestro)

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Builds CricLedger's bundled sound effects (src/assets/sounds/*.mp3).
+Builds CricPilot's bundled sound effects (src/assets/sounds/*.mp3).
 
 Sources (all downloaded from OpenGameArt.org, licences checked on each page; see docs/ASSET_CREDITS.md):
   - Gregor Quendel, "Free Crowd Cheering Sounds" (CC-BY 4.0)      -> crowd cheers, roars, groans

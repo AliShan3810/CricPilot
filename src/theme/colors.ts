@@ -1,5 +1,5 @@
 /**
- * CricLedger colour system: orange energy on midnight navy and charcoal, with warm white.
+ * CricPilot colour system: orange energy on midnight navy and charcoal, with warm white.
  * Orange is used selectively (primary actions, active states, featured info), never everywhere.
  */
 export interface Palette {

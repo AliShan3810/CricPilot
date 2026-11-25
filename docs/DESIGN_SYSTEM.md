@@ -1,4 +1,4 @@
-# CricLedger: design system
+# CricPilot: design system
 
 **Concept: "Night match, orange heat."** Midnight navy and charcoal surfaces, warm white type,
 and an orange accent that appears only where it matters (the main action, active states,
@@ -6,7 +6,7 @@ featured information). Cricket photography sets the mood on every screen; scores
 tall broadcast numerals.
 
 ## Brand
-* **Name:** CricLedger (`src/theme/brand.ts`). The project folder and bundle ID remain `CricPilot` / `com.cricpilot`.
+* **Name:** CricPilot (`src/theme/brand.ts`), matching the project folder and bundle ID `com.cricpilot`.
 * **Tagline:** *Every ball. Every moment.*
 * **Mark:** a navy tile holding an orange ball. Its warm-white seam lifts out of the ball into a rising flight
   path (`src/assets/brand/logo.svg`, `<BrandMark/>`, icons from `scripts/generate-brand.py`).

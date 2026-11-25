@@ -58,6 +58,6 @@ The CC-BY attributions are also shown in the app (Settings → About → Credits
 - Outfit: SIL Open Font License 1.1 (600/700/800/900 instanced from the official variable font)
 
 ## Logo, icons, illustrations
-The CricLedger mark, app icons, splash logo, line icons, team crests and empty-state
+The CricPilot mark, app icons, splash logo, line icons, team crests and empty-state
 illustrations are original work made for this project (`scripts/generate-brand.py`,
 `src/components/Icon.tsx`, `src/components/EmptyState.tsx`).

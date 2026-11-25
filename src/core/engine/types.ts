@@ -1,5 +1,5 @@
 /**
- * Domain types for the CricLedger scoring engine.
+ * Domain types for the CricPilot scoring engine.
  * The engine is pure TypeScript: it does no I/O and does not touch React Native.
  * See docs/SCORING_RULES.md for the laws implemented here.
  */

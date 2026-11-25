@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="src/assets/brand/logo-1024.png" alt="CricLedger logo" width="128" height="128" />
+<img src="src/assets/brand/logo-1024.png" alt="CricPilot logo" width="128" height="128" />
 
-# CricLedger
+# CricPilot
 
 ### *Every ball. Every moment.*
 
@@ -16,7 +16,7 @@
 <p>
   <img alt="Platforms" src="https://img.shields.io/badge/platforms-iOS_%7C_Android-FF8C42?style=flat-square&labelColor=171E2B" />
   <img alt="Offline" src="https://img.shields.io/badge/network-none,_100%25_offline-22C55E?style=flat-square&labelColor=171E2B" />
-  <img alt="Tests" src="https://img.shields.io/badge/jest-116_tests-FBBF24?style=flat-square&logo=jest&logoColor=white&labelColor=171E2B" />
+  <img alt="Tests" src="https://img.shields.io/badge/jest-128_tests-FBBF24?style=flat-square&logo=jest&logoColor=white&labelColor=171E2B" />
   <img alt="Storage" src="https://img.shields.io/badge/storage-SQLite_+_MMKV-A78BFA?style=flat-square&labelColor=171E2B" />
 </p>
 
@@ -251,7 +251,7 @@ Accessibility is built in: text respects the system font scale (capped at 1.4×)
 
 <div align="center">
 
-**CricLedger** · built for the people who keep the book.
+**CricPilot** · every ball, every moment, on your device.
 
 <sub>Photography under the Unsplash License · fonts under the SIL Open Font License · see <a href="docs/ASSET_CREDITS.md">asset credits</a></sub>
 

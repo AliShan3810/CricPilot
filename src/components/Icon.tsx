@@ -49,7 +49,7 @@ interface Props {
   strokeWidth?: number;
 }
 
-/** Line icons drawn for CricLedger (24×24 grid, round caps). */
+/** Line icons drawn for CricPilot (24×24 grid, round caps). */
 export function Icon({ name, size = 22, color, strokeWidth = 2 }: Props) {
   const { colors } = useTheme();
   const c = color ?? colors.text;

@@ -1,10 +1,10 @@
 import React from 'react';
 import Svg, { Circle, Defs, Path, RadialGradient, Rect, Stop } from 'react-native-svg';
 
-/** The CricLedger mark (same geometry as src/assets/brand/logo.svg). */
+/** The CricPilot mark (same geometry as src/assets/brand/logo.svg). */
 export function BrandMark({ size = 72, tile = true }: { size?: number; tile?: boolean }) {
   return (
-    <Svg width={size} height={size} viewBox="0 0 100 100" accessibilityLabel="CricLedger logo">
+    <Svg width={size} height={size} viewBox="0 0 100 100" accessibilityLabel="CricPilot logo">
       <Defs>
         <RadialGradient id="bm-bg" cx="35%" cy="30%" r="100%">
           <Stop offset="0" stopColor="#222B3A" />
