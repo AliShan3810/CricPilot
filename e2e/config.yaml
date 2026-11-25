@@ -1,0 +1,16 @@
+# Maestro workspace config: run with `maestro test e2e/`
+# flowsOrder matches each flow's `name:` (not its filename). Flows build on each other's data, so order matters.
+flows:
+  - flows/*.yaml
+executionOrder:
+  continueOnFailure: false
+  flowsOrder:
+    - Onboarding is shown once, can be completed and is remembered
+    - Create two teams with players
+    - Create a custom match, toss, start innings and score runs
+    - Extras, a wicket with new batter, undo and redo
+    - Match recovers exactly after the app is killed mid-innings
+    - Create a knockout tournament and open its fixtures and bracket
+    - Everything works in airplane mode
+    - Quick match with temporary teams (no saved teams needed)
+    - Sound & haptics settings persist and previews play

@@ -1,0 +1,8 @@
+appId: com.cricpilot
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible:
+      id: onboarding
+    timeout: 15000

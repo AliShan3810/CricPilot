@@ -1,0 +1,52 @@
+appId: com.cricpilot
+name: Quick match with temporary teams (no saved teams needed)
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: tab-play
+- tapOn:
+    id: versus-a
+- tapOn:
+    id: team-mode-a-quick
+- tapOn:
+    id: quick-name-a
+- inputText: "Street Kings"
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: quick-fill-a
+- tapOn:
+    id: quick-create-a
+- tapOn:
+    id: versus-b
+- tapOn:
+    id: team-mode-b-quick
+- tapOn:
+    id: quick-name-b
+- inputText: "Night Owls"
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: quick-fill-b
+- tapOn:
+    id: quick-create-b
+- assertVisible: "Street Kings"
+- assertVisible: "Night Owls"
+- tapOn:
+    id: match-quick-start
+- extendedWaitUntil:
+    visible:
+      id: toss-flip
+    timeout: 8000
+- tapOn:
+    id: toss-flip
+- extendedWaitUntil:
+    visible:
+      id: toss-result
+    timeout: 6000
+- tapOn:
+    id: toss-confirm
+- extendedWaitUntil:
+    visible:
+      id: sheet-start-innings
+    timeout: 8000

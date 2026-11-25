@@ -1,0 +1,79 @@
+appId: com.cricpilot
+name: Create a custom match, toss, start innings and score runs
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-start-match
+# Step 1: head to head
+- tapOn:
+    id: versus-a
+- tapOn:
+    id: pick-team-a-LHL
+- tapOn:
+    id: versus-b
+- tapOn:
+    id: pick-team-b-KRK
+- tapOn:
+    id: match-next
+# Step 2: setup
+- tapOn:
+    id: format-CUSTOM
+- tapOn:
+    id: overs-5
+- tapOn:
+    id: rule-players-minus   # 11 -> 3 players
+    repeat: 8
+- swipe:                     # centred swipe (an edge swipe would trigger the iOS home gesture)
+    start: 50%, 60%
+    end: 50%, 35%
+- waitForAnimationToEnd
+- tapOn:
+    id: rule-bowler-limit-minus   # 1 -> no limit (3 bowlers x 1 over cannot cover 5 overs)
+- assertVisible:
+    id: rule-bowler-limit-value
+    text: ".*No limit.*"
+- tapOn:
+    id: match-to-xi
+# Step 3: Playing XI
+- tapOn:
+    id: match-create
+- extendedWaitUntil:
+    visible:
+      id: toss-flip
+    timeout: 8000
+- tapOn:
+    id: toss-winner-LHL
+- extendedWaitUntil:
+    visible:
+      id: toss-decision-bat
+    timeout: 6000
+- tapOn:
+    id: toss-decision-bat
+- tapOn:
+    id: toss-confirm
+- extendedWaitUntil:
+    visible:
+      id: sheet-start-innings
+    timeout: 8000
+- tapOn:
+    id: "opener-Ali Raza"
+- tapOn:
+    id: "opener-Babar Khan"
+- tapOn:
+    id: "openbowler-Danish Ali"
+- tapOn:
+    id: start-innings-confirm
+- tapOn:
+    id: key-1
+- tapOn:
+    id: key-4
+- tapOn:
+    id: key-6
+- tapOn:
+    id: key-0
+- assertVisible:
+    id: score-runs
+    text: "11"
+- assertVisible:
+    id: score-overs
+    text: "0.4.*"

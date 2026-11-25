@@ -1,0 +1,34 @@
+appId: com.cricpilot
+name: Match recovers exactly after the app is killed mid-innings
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-resume
+- extendedWaitUntil:
+    visible:
+      id: scoreboard
+    timeout: 8000
+- tapOn:
+    id: key-2
+- copyTextFrom:
+    id: score-runs
+- stopApp            # simulate the app being terminated
+- runFlow: subflows/launch_keep.yaml
+- assertVisible:
+    id: home-resume
+- tapOn:
+    id: home-resume
+- extendedWaitUntil:
+    visible:
+      id: scoreboard
+    timeout: 8000
+- assertVisible:
+    id: score-runs
+    text: ${maestro.copiedText}
+- tapOn:
+    id: key-undo     # undo history also survives the restart
+- assertNotVisible:
+    id: score-runs
+    text: ${maestro.copiedText}
+- tapOn:
+    id: key-redo

@@ -1,0 +1,31 @@
+appId: com.cricpilot
+name: Sound & haptics settings persist and previews play
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-settings
+- swipe:
+    start: 50%, 70%
+    end: 50%, 30%
+- waitForAnimationToEnd
+- tapOn:
+    id: preview-four
+- tapOn:
+    id: preview-duck
+- tapOn:
+    id: settings-sound-crowd      # crowd off
+- tapOn:
+    id: header-back
+- stopApp
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-settings
+- swipe:
+    start: 50%, 70%
+    end: 50%, 30%
+- waitForAnimationToEnd
+- assertVisible:
+    id: settings-sound-crowd
+    checked: false                # the toggle state survived a restart
+- tapOn:
+    id: settings-sound-crowd      # back on

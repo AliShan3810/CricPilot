@@ -1,0 +1,62 @@
+# Params: TEAM, SHORT, P1, P2, P3
+appId: com.cricpilot
+---
+- tapOn:
+    id: tab-Teams
+- tapOn:
+    id: teams-add
+- tapOn:
+    id: team-name
+- inputText: ${TEAM}
+- tapOn:
+    id: team-short
+- eraseText: 4
+- inputText: ${SHORT}
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: team-save
+- extendedWaitUntil:
+    visible:
+      id: team-detail-name
+    timeout: 8000
+- repeat:
+    times: 1
+    commands:
+      - tapOn:
+          id: team-add-player
+      - tapOn:
+          id: player-name
+      - inputText: ${P1}
+      - pressKey: Enter
+      - waitForAnimationToEnd
+      - tapOn:
+          id: player-save-another
+      - tapOn:
+          id: player-name
+      - inputText: ${P2}
+      - pressKey: Enter
+      - waitForAnimationToEnd
+      - tapOn:
+          id: player-save-another
+      - tapOn:
+          id: player-name
+      - inputText: ${P3}
+      - pressKey: Enter
+      - waitForAnimationToEnd
+      - tapOn:
+          id: player-save
+- assertVisible: ".*${P1}.*"   # rows are one accessibility element ("Name, role…")
+- assertVisible: ".*${P3}.*"
+- waitForAnimationToEnd          # the player form is still dismissing; a tap now can be swallowed
+- repeat:                        # so retry the back tap until the tab bar is showing
+    while:
+      notVisible:
+        id: tab-Teams
+    times: 3
+    commands:
+      - tapOn:
+          id: header-back
+      - waitForAnimationToEnd
+- assertVisible:
+    id: tab-Teams

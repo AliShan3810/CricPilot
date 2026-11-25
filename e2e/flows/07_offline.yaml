@@ -1,0 +1,35 @@
+appId: com.cricpilot
+name: Everything works in airplane mode
+---
+# Android emulators can toggle airplane mode from Maestro. On iOS simulators,
+# turn the Mac's network off (or use the Network Link Conditioner "100% Loss").
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - setAirplaneMode: enabled
+      - waitForAnimationToEnd
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-stats
+- tapOn:
+    id: header-back
+- tapOn:
+    id: tab-Matches
+- tapOn:
+    id: match-card-0
+- extendedWaitUntil:
+    visible:
+      id: scoreboard
+    timeout: 8000
+- tapOn:
+    id: key-1
+- tapOn:
+    id: live-scorecard
+- assertVisible:
+    id: scorecard-result
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - setAirplaneMode: disabled

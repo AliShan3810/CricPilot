@@ -1,0 +1,29 @@
+appId: com.cricpilot
+name: Create two teams with players
+---
+- runFlow: subflows/launch_keep.yaml
+- runFlow:
+    file: subflows/create_team.yaml
+    env: { TEAM: "Lahore Lions", SHORT: "LHL", P1: "Ali Raza", P2: "Babar Khan", P3: "Chand Mir" }
+- runFlow:
+    file: subflows/create_team.yaml
+    env: { TEAM: "Karachi Kings", SHORT: "KRK", P1: "Danish Ali", P2: "Ehsan Shah", P3: "Faraz Butt" }
+- tapOn:
+    id: tab-Teams
+- assertVisible:
+    id: "team-row-Lahore Lions"
+- assertVisible:
+    id: "team-row-Karachi Kings"
+# validation: duplicate team name is rejected
+- tapOn:
+    id: teams-add
+- tapOn:
+    id: team-name
+- inputText: "lahore lions"
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: team-save
+- assertVisible: "A team with this name already exists."
+- tapOn:
+    id: header-back

@@ -1,0 +1,25 @@
+appId: com.cricpilot
+name: Onboarding is shown once, can be completed and is remembered
+---
+- runFlow: subflows/launch_fresh.yaml
+- assertVisible:
+    id: onboarding-skip
+- tapOn:
+    id: onboarding-next
+- tapOn:
+    id: onboarding-next
+- tapOn:
+    id: onboarding-name
+- inputText: "Sam"
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: onboarding-get-started
+- assertVisible:
+    id: home-welcome
+    text: "(?s).*Sam.*"
+# onboarding state persists across restarts
+- stopApp
+- runFlow: subflows/launch_keep.yaml
+- assertNotVisible:
+    id: onboarding

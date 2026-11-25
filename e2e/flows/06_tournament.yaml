@@ -1,0 +1,38 @@
+appId: com.cricpilot
+name: Create a knockout tournament and open its fixtures and bracket
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: tab-Tournaments
+- tapOn:
+    id: tournaments-new
+- tapOn:
+    id: tournament-name
+- inputText: "Winter Cup"
+- pressKey: Enter
+- waitForAnimationToEnd
+- tapOn:
+    id: tformat-knockout
+- tapOn:
+    id: tteam-LHL
+- tapOn:
+    id: tteam-KRK
+- swipe:
+    start: 50%, 70%
+    end: 50%, 20%
+- swipe:
+    start: 50%, 70%
+    end: 50%, 20%
+- waitForAnimationToEnd
+- tapOn:
+    id: tournament-create
+- extendedWaitUntil:
+    visible: "Winter Cup"
+    timeout: 8000
+- assertVisible:
+    id: fixture-0
+- assertVisible: "Final"
+- tapOn:
+    id: fixture-0
+- assertVisible:
+    id: match-next      # match wizard opens with the fixture's teams locked

@@ -1,0 +1,67 @@
+appId: com.cricpilot
+name: Extras, a wicket with new batter, undo and redo
+---
+- runFlow: subflows/launch_keep.yaml
+- tapOn:
+    id: home-resume
+- extendedWaitUntil:
+    visible:
+      id: scoreboard
+    timeout: 8000
+# wide + 1 run (2 total), still 0.4
+- tapOn:
+    id: key-wide
+- tapOn:
+    id: extra-wide-1
+- assertVisible:
+    id: score-runs
+    text: "13"
+- assertVisible:
+    id: score-overs
+    text: "0.4.*"
+# no-ball, 4 off the bat -> 5, next ball is a free hit
+- tapOn:
+    id: key-noball
+- tapOn:
+    id: extra-noBall-4
+- assertVisible:
+    id: score-runs
+    text: "18"
+- assertVisible: "Free hit.*"
+# undo / redo the no-ball
+- tapOn:
+    id: key-undo
+- assertVisible:
+    id: score-runs
+    text: "13"
+- tapOn:
+    id: key-redo
+- assertVisible:
+    id: score-runs
+    text: "18"
+# legal dot to clear the free hit, then a bowled wicket
+- tapOn:
+    id: key-0
+- tapOn:
+    id: key-wicket
+- tapOn:
+    id: dismissal-bowled
+- tapOn:
+    id: wicket-confirm
+- assertVisible:
+    id: score-wickets
+    text: "1"
+# the wicket fell on the 6th legal ball: the engine asks for the batter first, then the bowler
+- extendedWaitUntil:
+    visible:
+      id: sheet-batter
+    timeout: 6000
+- tapOn:
+    id: "pick-Chand Mir"
+- extendedWaitUntil:
+    visible:
+      id: sheet-bowler
+    timeout: 6000
+- tapOn:
+    id: "pick-Ehsan Shah"
+- assertVisible: "Chand Mir.*"

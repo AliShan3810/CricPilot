@@ -1,0 +1,8 @@
+appId: com.cricpilot
+---
+- launchApp:
+    clearState: false
+- extendedWaitUntil:
+    visible:
+      id: tab-Home   # the tab bar is always on Home; the scroll view id is not always exposed on Android
+    timeout: 15000

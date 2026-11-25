@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/BarlowCondensed-Bold.ttf",
+      "sha1": "5cd05c03686a635d32e78e5ddbdb4b18c7fb206a"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-ExtraBold.ttf",
+      "sha1": "1a548eb6ecd559b30cc485c593fbfd617a083cde"
+    },
+    {
+      "path": "src/assets/fonts/BarlowCondensed-SemiBold.ttf",
+      "sha1": "3ee10e25a4f8ebbc8c00fa79bf790f5816c519d5"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Bold.ttf",
+      "sha1": "27b528dfa80c72f4aec3a121036123a3c47cf162"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-ExtraBold.ttf",
+      "sha1": "99db1b869644b65e3d5bc1ab85731a9e1c5a53df"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Medium.ttf",
+      "sha1": "d0f9ec06cfe055bc14feba7be304aaa43a54f143"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-Regular.ttf",
+      "sha1": "2e2c2f87550dbd525c733bc1a64c24cc389231a2"
+    },
+    {
+      "path": "src/assets/fonts/Manrope-SemiBold.ttf",
+      "sha1": "f11cd9a1e8e30b24086e5cdf27f261cd784264f5"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Black.ttf",
+      "sha1": "0f4bc0e4cc71c4844e0d03cc97422646b3988f47"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-Bold.ttf",
+      "sha1": "349522ccaccd18e16501c2bfc1627ed73719ad60"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-ExtraBold.ttf",
+      "sha1": "17cec688f34992e467f686a84f3256aa2c114e89"
+    },
+    {
+      "path": "src/assets/fonts/Outfit-SemiBold.ttf",
+      "sha1": "85cf68f5d794b1e60c00850de9963f5a8c056982"
+    }
+  ]
+}
